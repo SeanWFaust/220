@@ -35,11 +35,15 @@ def shooting_percentage():
 
 
 def coffee():
-    pass
+    weight = eval(input('How many pounds of coffee are you buying?'))
+    price = (weight * 10.5) + (weight * .86) + 1.5
+    print(price)
 
 
 def kilometers_to_miles():
-    pass
+    Km = eval(input('How many kilometers are you going?'))
+    miles = Km / 1.61
+    print('That is', miles, 'miles!')
 
 
 if __name__ == '__main__':
