@@ -1,35 +1,58 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Sean Faust
+HW2.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: These programs are meant to practice coding arithmetic problems and including the math library.
 
 Certification of Authenticity:
-<include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 import math
 
 
 def sum_of_threes():
-    pass
+    upperbound = eval(input('What is the upper bound? '))
+    sum = 0
+    for i in range(upperbound):
+        if i % 3 == 0:
+            sum += i
+    print("The sum of threes is: ", sum)
+
 
 
 def multiplication_table():
-    pass
+    for i in range(1, 11):
+        for j in range(1, 11):
+            print(i * j, end='\t')
+        print(" ")
 
 
 def triangle_area():
-    pass
+    side_a = eval(input('Enter side a length: '))
+    side_b = eval(input('Enter side b length: '))
+    side_c = eval(input('Enter side c length: '))
+    sides = (side_a + side_b + side_c) / 2
+    area = math.sqrt(sides * (sides - side_a) * (sides - side_b) * (sides - side_c))
+    print("area is", area)
 
 
 def sum_squares():
-    pass
+    lower_r = eval(input("Please enter lower range: "))
+    upper_r = eval(input("Please enter upper range: "))
+    sum = 0
+    for i in range(lower_r, upper_r + 1):
+        i = i ** 2
+        sum += i
+    print(sum)
 
 
 def power():
-    pass
+    true_base = eval(input("Please input the base number: "))
+    exponent = eval(input("Please input the exponent number: "))
+    base_num = true_base
+    for i in range(exponent - 1):
+        base_num *= true_base
+    print(base_num)
 
 
 if __name__ == '__main__':
