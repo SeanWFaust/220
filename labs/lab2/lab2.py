@@ -3,7 +3,7 @@ Name: Sean Faust
 Lab2.py
 
 Problem: This program is to take a random amount of inputs from the user and
-    output the Root-Square-Mean, Harmonic Mean, and the Geometric Mean back to the User.
+    output the Root-Square-Mean, Harmonic Mean, and the Geometric Mean to the User.
 
 Certification of Authenticity:
 I certify that this assignment is entirely my own work.
