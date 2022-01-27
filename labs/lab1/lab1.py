@@ -13,4 +13,4 @@ def monthly_interest():
     pay_day = eval(input("Please enter the day you made your payment: "))
     avg_day_bal = ((previous_balance * total_cycle_days) - (payment * (total_cycle_days - pay_day))) / total_cycle_days
     month_interest = (avg_day_bal * (annual_interest / 12)) / 100
-    print("Your monthly interest charge is: $", month_interest)
+    print("Your monthly interest charge is: $", round(month_interest, 2))
