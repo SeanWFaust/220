@@ -12,11 +12,10 @@ import math
 
 def sum_of_threes():
     upperbound = eval(input('What is the upper bound? '))
-    sum = 0
-    for i in range(upperbound):
-        if i % 3 == 0:
-            sum += i
-    print("The sum of threes is: ", sum)
+    three_sum = 0
+    for i in range(0, upperbound + 1, 3):
+        three_sum = i + three_sum
+    print("The sum of threes is: ", three_sum)
 
 
 
@@ -39,11 +38,11 @@ def triangle_area():
 def sum_squares():
     lower_r = eval(input("Please enter lower range: "))
     upper_r = eval(input("Please enter upper range: "))
-    sum = 0
+    total = 0
     for i in range(lower_r, upper_r + 1):
-        i = i ** 2
-        sum += i
-    print(sum)
+        i = i * i
+        total += i
+    print(total)
 
 
 def power():
