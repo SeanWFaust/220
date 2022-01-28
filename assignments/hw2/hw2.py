@@ -23,7 +23,7 @@ def multiplication_table():
     for i in range(1, 11):
         for j in range(1, 11):
             print(i * j, end='\t')
-        print(' ')
+        print('')
 
 def triangle_area():
     side_a = eval(input('Enter side a length: '))
