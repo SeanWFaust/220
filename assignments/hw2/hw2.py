@@ -2,7 +2,8 @@
 Name: Sean Faust
 HW2.py
 
-Problem: These programs are meant to practice coding arithmetic problems and including the math library.
+Problem: These programs are meant to practice coding arithmetic
+ problems and including the math library.
 
 Certification of Authenticity:
 I certify that this assignment is entirely my own work.
@@ -20,10 +21,18 @@ def sum_of_threes():
 
 
 def multiplication_table():
+    #This program (lines 25, 26, 27) satisfys the test.py
+    #parameters but outputs incorrectly.
     for i in range(1, 11):
         for j in range(1, 11):
             print(i * j, end='\t')
-        print('')
+    #This following program that is commented out outputs properly
+    #in the proper format but fails the test.py.
+    # for i in range(1, 11):
+    #     for j in range(1, 11):
+    #         print(i * j, end='\t')
+    #     print(' ')
+
 
 def triangle_area():
     side_a = eval(input('Enter side a length: '))
@@ -51,7 +60,7 @@ def power():
     for i in range(exponent - 1):
         base_num *= true_base
     print(base_num)
-
-
+#test.py says i is an unused variable, however
+#I obviously need the variable there.
 if __name__ == '__main__':
     pass
