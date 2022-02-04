@@ -40,9 +40,14 @@ def sequence():
 
 
 def pi():
-    pass
-
-
+    series = eval(input("enter a number:"))
+    prea = 1
+    for i in range(1, series + 1):
+        numer = (i + i % 2)
+        denom = (i + ((i + 1) % 2))
+        prea *= numer / denom
+    ans = prea * 2
+    print(ans)
 
 
 if __name__ == '__main__':
