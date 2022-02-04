@@ -1,34 +1,49 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Sean Faust
+HW3.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: This homework focuses on using loops to solve different mathematical problems.
 
 Certification of Authenticity:
-<include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 
 
 def average():
-    pass
-
+    amnt_grades = eval(input("How many grades will you enter?"))
+    total_grade = 0
+    for i in range(amnt_grades):
+        total_grade += eval(input("Enter grade: "))
+    grade = total_grade / amnt_grades
+    print("Your average is: ", grade)
 
 def tip_jar():
-    pass
+    tips = 0
+    for i in range(5):
+        tips += eval(input("How much would you like to tip?"))
+    print("total tips: ", tips)
 
 
 def newton():
-    pass
-
+    square = eval(input("What number do you want to square root?"))
+    amnt_run = eval(input("How many times would you like to improve the approximation?"))
+    aprox_sqr = square
+    for i in range(amnt_run):
+        aprox_sqr = (aprox_sqr+(square/aprox_sqr))/2
+    print("The square root is approximately", aprox_sqr, 2)
 
 def sequence():
-    pass
+    run_amnt = eval(input("How many terms would you like?"))
+    for i in range(1, run_amnt + 1, 2):
+        output = i
+        print(output)
+        print(i)
 
 
 def pi():
     pass
+
+
 
 
 if __name__ == '__main__':
