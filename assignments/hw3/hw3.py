@@ -34,10 +34,9 @@ def newton():
 
 def sequence():
     run_amnt = eval(input("How many terms would you like?"))
-    for i in range(1, run_amnt + 1, 2):
-        output = i
-        print(output)
-        print(i)
+    for i in range(1, run_amnt + 1):
+        print((i + i % 2) - 1, end=' ')
+
 
 
 def pi():
