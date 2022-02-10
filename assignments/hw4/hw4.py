@@ -10,7 +10,7 @@ I certify that this assignment is entirely my own work.
 """
 
 from graphics import *
-
+import math
 
 def squares():
     # Creates a graphical window
@@ -23,17 +23,17 @@ def squares():
 
     # create a space to instruct user
     inst_pt = Point(width / 2, height - 10)
-    instructions = Text(inst_pt, "Click to move circle")
+    instructions = Text(inst_pt, "Click to make a square")
     instructions.draw(win)
 
     # allows the user to click multiple times to move the circle
     for i in range(num_clicks + 1):
         center = win.getMouse()
-        sEcornerx = center.getX() - 25
-        sEcornery = center.getY() - 25
-        nWcornerx = center.getX() + 25
-        nWcornery = center.getY() + 25
-        shape = Rectangle(Point(sEcornerx, sEcornery), Point(nWcornerx, nWcornery))
+        clickx1 = center.getX() - 25
+        clicky1 = center.getY() - 25
+        clickx2 = center.getX() + 25
+        clicky2 = center.getY() + 25
+        shape = Rectangle(Point(clickx1, clicky1), Point(clickx2, clicky2))
         shape.setOutline("red")
         shape.setFill("red")
         shape.draw(win)
@@ -58,27 +58,42 @@ def rectangle():
     length = (400 - click1.getX()) - (400 - click2.getX())
     hei = (400 - click1.getY()) - (400 - click2.getY())
     perimeter = (length * 2) + (hei * 2)
-    perimeter_pt = Point(200, 20)
-    perimeter_text = Text(perimeter_pt, "Perimeter: ")
+    perimeter_text = Text(Point(200, 20), "Perimeter: ")
     perimeter_text.draw(win)
     area = (length * hei)
-    area_text_pt = Point(200, 40)
-    area_text = Text(area_text_pt, "Area:")
+    area_text = Text(Point(200, 40), "Area:")
     area_text.draw(win)
-    area_pt = Point(250, 40)
-    area_num = Text(area_pt, area)
+    area_num = Text(Point(250, 40), area)
     area_num.draw(win)
-    perm_num_pt = Point(260, 20)
-    perm_num = Text(perm_num_pt, perimeter)
+    perm_num = Text(Point(260, 20), perimeter)
     perm_num.draw(win)
-    close_pt = Point(200, 200)
-    close_text = Text(close_pt, "Click again to close")
+    close_text = Text(Point(200, 200), "Click again to close")
     close_text.draw(win)
     win.getMouse()
     win.close()
 
 def circle():
-    pass
+    width = 400
+    height = 400
+    win = GraphWin("Circle", width, height)
+    click1 = win.getMouse()
+    click2 = win.getMouse()
+    X_val = (click2.getX() - click1.getX()) ** 2
+    Y_val = (click2.getY() - click1.getY()) ** 2
+    radius = math.sqrt((X_val + Y_val))
+    circle = Circle(click1, radius)
+    circle.setFill("Blue")
+    circle.setOutline(("Black"))
+    circle.draw(win)
+    radius_txt = Text(Point(200, 20), "Radius:")
+    radius_txt.draw(win)
+    radius_num = Text(Point(200, 40), radius)
+    radius_num.draw(win)
+    close_pt = Point(200, 200)
+    close_text = Text(close_pt, "Click again to close")
+    close_text.draw(win)
+    win.getMouse()
+    win.close()
 
 
 def pi2():
