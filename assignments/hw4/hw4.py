@@ -1,13 +1,12 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Sean Faust
+HW4.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: This homework goes over the different functions and uses of the graphics library
+    and how to use them in different creative ways.
 
 Certification of Authenticity:
-<include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 
 from graphics import *
@@ -27,23 +26,21 @@ def squares():
     instructions = Text(inst_pt, "Click to move circle")
     instructions.draw(win)
 
-    # builds a circle
-    shape = Circle(Point(50, 50), 20)
-    shape.setOutline("red")
-    shape.setFill("red")
-    shape.draw(win)
-
     # allows the user to click multiple times to move the circle
-    for i in range(num_clicks):
-        click = win.getMouse()
-        center = shape.getCenter()  # center of circle
+    for i in range(num_clicks + 1):
+        center = win.getMouse()
+        sEcornerx = center.getX() - 25
+        sEcornery = center.getY() - 25
+        nWcornerx = center.getX() + 25
+        nWcornery = center.getY() + 25
+        shape = Rectangle(Point(sEcornerx, sEcornery), Point(nWcornerx, nWcornery))
+        shape.setOutline("red")
+        shape.setFill("red")
+        shape.draw(win)
 
-        # move amount is distance from center of circle to the
-        # point where the user clicked
-        change_x = click.getX() - center.getX()
-        change_y = click.getY() - center.getY()
-        shape.move(change_x, change_y)
-
+    close_pt = Point(width / 2, height - 100)
+    instructions = Text(close_pt, "Click to Close")
+    instructions.draw(win)
     win.getMouse()
     win.close()
 
