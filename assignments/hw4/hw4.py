@@ -99,10 +99,12 @@ def circle():
 def pi2():
     near_pi = 0
     numer = 4
+    denom = 1
     iterations = eval(input("Enter the number of terms to sum:"))
-    for i in range(1, iterations + 1, 2):
-        near_pi += (numer / i)
-        numer = numer * -1
+    for i in range(1, iterations + 1):
+        near_pi += (numer / denom)
+        denom += 2
+        numer *= -1
     print("pi approximation: ", near_pi)
     print("accuracy: ", near_pi - math.pi)
 
