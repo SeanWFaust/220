@@ -78,9 +78,9 @@ def circle():
     win = GraphWin("Circle", width, height)
     click1 = win.getMouse()
     click2 = win.getMouse()
-    X_val = (click2.getX() - click1.getX()) ** 2
-    Y_val = (click2.getY() - click1.getY()) ** 2
-    radius = math.sqrt((X_val + Y_val))
+    x_val = (click2.getX() - click1.getX()) ** 2
+    y_val = (click2.getY() - click1.getY()) ** 2
+    radius = math.sqrt((x_val + y_val))
     circle = Circle(click1, radius)
     circle.setFill("Blue")
     circle.setOutline(("Black"))
