@@ -2,9 +2,8 @@
 Name: Sean Faust
 HW6.py
 
-Problem: Working with strings
-Writing functions that accept arguments and return values.
-Modifying an object in a parameter
+Problem: Working with strings - writing simple encoding functions.
+Working with functions to return certain values.
 
 
 Certification of Authenticity:
@@ -13,11 +12,14 @@ I certify that this assignment is entirely my own work.
 
 import math
 
+# Takes an input from the user and prints it in American money format.
+# i.e. 31.1 becomes $31.10
 def cash_converter():
     number = input("Enter an integer:")
     print("That is ${:,.2f}".format(float(number)))
 
-
+# Simple encoding function that adds an integer key amount to the messages
+# Unicode amount per character and outputs the new string.
 def encode():
     message = input("Enter a message:")
     key = input("Enter a key:")
@@ -26,35 +28,34 @@ def encode():
         output += chr(ord(letter) + int(key))
     print(output)
 
-
+# Function that finds a spheres area given the radius
 def sphere_area(radius):
     area = 4 * math.pi * (radius ** 2)
     print("Surface area:", area)
-    return(area)
+    return area
 
-
+# Function to find the spheres volume given the radius
 def sphere_volume(radius):
     volume = (4 / 3) * math.pi * (float(radius) ** 3)
     print("Volume:", float(volume))
     return float(volume)
 
-
+# Function to find the sunm of all the numbers in a given range.
 def sum_n(number):
     total = 0
     for i in range(number + 1):
         total += i
-    print(int(total))
-    return(int(total))
+    return int(total)
 
-
+# Function to find the sum of all numbers in a given range after they have been cubed.
 def sum_n_cubes(number):
     total = 0
     for i in range(number + 1):
         total += i ** 3
-    print(int(total))
-    return(int(total))
+    return int(total)
 
-
+# Encodes a message by the unicode of a given key. If the key is shorter it repeats.
+# If the key is longer it stops short. The output remains within the 57 values of A - z.
 def encode_better():
     message = input("Enter a message")
     word = input("Enter a key")
