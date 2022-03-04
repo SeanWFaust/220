@@ -17,9 +17,9 @@ def weighted_average(in_file_name, out_file_name):
         numberfile = []
         weightlist = []
         gradelist = []
-        average = 0
         newweightlist = []
         averages = []
+        average = 0
         infile = file.readlines()
         for item in infile: # strips the white space and newline tags
             newfile.append(item.strip())
@@ -36,17 +36,21 @@ def weighted_average(in_file_name, out_file_name):
             for num in weightnum:
                 weight += int(num)
             newweightlist.append(weight)
-
+        for numbers in numberfile:
+            average = 0
+            for num in numbers:
+                average += int(num[0::2]) * int(num[1::2])
+            averages.append(average)
         for i in range(len(namefile)):
             if newweightlist[i] < 100:
-                print(namefile[i] + "'s average: Error: The weights are less than 100.")
+                print(namefile[i] + " 's average: Error: The weights are less than 100.")
             elif newweightlist[i] > 100:
-                print(namefile[i] + "'s average: Error: The weights are more than 100.")
+                print(namefile[i] + " 's average: Error: The weights are more than 100.")
             else:
+                print(namefile[i] + " 's average: " + str("{:.1f}".format(averages[i] / 100)))
+                average += averages[i] / 100
+        print('The classes average is: ', "{:.1f}".format(average))
 
-                print(namefile[i] + "'s average:" + str(average / 100))
-        print(averages)
-        print(newweightlist)
-        print(weightlist)
-        print(gradelist)
-        print(namefile)
+# I know the outputs are wrong here but every time I try to iterate through my lists of stings
+# it iterates through 1 CHARACTER at a time and not by 1 index. I don't know what I was doing wrong.
+# This is as close as I could get to the 'correct' output as possible.
