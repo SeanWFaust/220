@@ -39,7 +39,7 @@ def weighted_average(in_file_name, out_file_name):
         for numbers in numberfile:
             average = 0
             for num in numbers:
-                average += int(num[0::2]) * int(num[1::2])
+                average += int(num[0::2] + num[1::2])
             averages.append(average)
         for i in range(len(namefile)):
             if newweightlist[i] < 100:
