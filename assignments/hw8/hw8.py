@@ -9,6 +9,8 @@ Certification of Authenticity:
 I certify that this assignment is entirely my own work.
 """
 
+from graphics import *
+import math
 
 def add_ten(nums):  # adds 10 to each number in a list of numbers
     for num in range(len(nums)):
@@ -65,10 +67,6 @@ def leap_year(year):
         return False
 
 
-from graphics import *
-import math
-
-
 def circle_overlap():
     width_px = 700
     height_px = 700
@@ -92,19 +90,16 @@ def circle_overlap():
     circle_two = Circle(center_2, radius_2)
     circle_two.setFill("light green")
     circle_two.draw(win)
+    close_txt = Text(Point(5, 8), "Click to close the window.")
+    close_txt.draw(win)
 
-    true_statement = "The circles did overlap."
-    false_statement = "The circles did not overlap."
+    true_txt = Text(Point(5, 5), "The circles did overlap.")
+    false_txt = Text(Point(5, 5), "The circles did not overlap.")
 
     if did_overlap(circle_one, circle_two):
-        true_txt = Text(Point(300, 150), true_statement)
         true_txt.draw(win)
     else:
-        false_txt = Text(Point(300, 150), false_statement)
         false_txt.draw(win)
-
-    close_txt = Text(Point(300, 200), "Click to close the window.")
-    close_txt.draw(win)
 
     win.getMouse()
     win.close()
