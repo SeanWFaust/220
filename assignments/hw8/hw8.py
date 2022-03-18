@@ -8,9 +8,9 @@ functions within a larger function.
 Certification of Authenticity:
 I certify that this assignment is entirely my own work.
 """
-
-from graphics import *
 import math
+from graphics import GraphWin, Circle, Text, Point
+
 
 def add_ten(nums):  # adds 10 to each number in a list of numbers
     for num in range(len(nums)):
