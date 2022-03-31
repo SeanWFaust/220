@@ -31,8 +31,6 @@ def main():
             elif exit.is_clicked(win.getMouse()):
                 door.set_secret(True)
                 win.close()
-            else:
-                incrementer = 1
         while incrementer == 0:
             if door.is_clicked(win.getMouse()):
                 door.close('white', 'Closed')
@@ -40,5 +38,3 @@ def main():
             elif exit.is_clicked(win.getMouse()):
                 door.set_secret(True)
                 win.close()
-            else:
-                incrementer = 0
