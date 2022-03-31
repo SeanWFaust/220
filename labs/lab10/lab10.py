@@ -22,11 +22,23 @@ def main():
     door = Door(Rectangle(Point(100, 200), Point(300, 375)), 'Closed')
     door.draw(win)
     door.close('white', 'Closed')
+    incrementer = 1
     while not door.is_secret():
-        if door.is_clicked(win.getMouse()) and door.close('white', 'Closed'):
-            door.open('red', 'Open')
-        if door.is_clicked(win.getMouse()) and door.open('red', 'Open'):
-            door.close('white', 'Closed')
-        elif exit.is_clicked(win.getMouse()):
-            door.set_secret(True)
-    win.close()
+        while incrementer == 1:
+            if door.is_clicked(win.getMouse()):
+                door.open('red', 'Open')
+                incrementer = 0
+            elif exit.is_clicked(win.getMouse()):
+                door.set_secret(True)
+                win.close()
+            else:
+                incrementer = 1
+        while incrementer == 0:
+            if door.is_clicked(win.getMouse()):
+                door.close('white', 'Closed')
+                incrementer = 1
+            elif exit.is_clicked(win.getMouse()):
+                door.set_secret(True)
+                win.close()
+            else:
+                incrementer = 0
