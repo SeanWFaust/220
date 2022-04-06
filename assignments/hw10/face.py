@@ -24,10 +24,21 @@ class Face:
         self.mouth.draw(window)
 
     def smile(self):
-        pass
+        smile = self.mouth.clone()
+        mouth_center = self.mouth.getCenter()
+        left_smile = Line(smile.getP1(), mouth_center * 1.15)
+        right_smile = Line(smile.getP2(), mouth_center * 1.15)
+        left_smile.draw(self.window)
+        right_smile.draw(self.window)
 
     def shock(self):
-        pass
+        mouth_center = self.mouth.getCenter()
+        self.mouth.undraw()
+        shock = Circle(mouth_center, 5)
+        shock.draw(self.window)
 
     def wink(self):
-        pass
+        eye_center = self.left_eye.getCenter()
+        wink = Line((eye_center.getX() - 5, eye_center.getY()), (eye_center.getX() + 5, eye_center.getY()))
+        self.left_eye.undraw()
+        wink.draw(self.window)
