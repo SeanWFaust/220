@@ -1,3 +1,13 @@
+"""
+Name: Sean Faust
+HW10.py
+
+Problem: This homework has me creating the class Sphere and methods to accompany it.
+
+Certification of Authenticity:
+I certify that this assignment is entirely my own work.
+"""
+
 import math
 
 

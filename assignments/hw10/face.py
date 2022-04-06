@@ -1,3 +1,13 @@
+"""
+Name: Sean Faust
+HW10.py
+
+Problem: This homework has me creating methods for the class 'Face'.
+
+Certification of Authenticity:
+I certify that this assignment is entirely my own work.
+"""
+
 from graphics import Circle, Line
 
 
@@ -26,19 +36,23 @@ class Face:
     def smile(self):
         smile = self.mouth.clone()
         mouth_center = self.mouth.getCenter()
-        left_smile = Line(smile.getP1(), mouth_center * 1.15)
-        right_smile = Line(smile.getP2(), mouth_center * 1.15)
+        left_smile = Line(smile.getP1(), (mouth_center.getX(), mouth_center.getY() * 1.15))
+        right_smile = Line(smile.getP2(), (mouth_center.getX(), mouth_center.getY() * 1.15))
         left_smile.draw(self.window)
         right_smile.draw(self.window)
 
     def shock(self):
-        mouth_center = self.mouth.getCenter()
+        shock = self.left_eye.clone()
+        shock_point = self.mouth.getCenter()
         self.mouth.undraw()
-        shock = Circle(mouth_center, 5)
+        shock.move(shock_point.getX(), shock_point.getY())
         shock.draw(self.window)
+
 
     def wink(self):
         eye_center = self.left_eye.getCenter()
-        wink = Line((eye_center.getX() - 5, eye_center.getY()), (eye_center.getX() + 5, eye_center.getY()))
+        eye_len = self.left_eye.getRadius()
+        wink = Line((eye_center.getX() - eye_len, eye_center.getY()),
+                    (eye_center.getX() + eye_len, eye_center.getY()))
         self.left_eye.undraw()
         wink.draw(self.window)
