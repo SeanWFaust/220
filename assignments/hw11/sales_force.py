@@ -29,8 +29,8 @@ class SalesForce:
 
     def top_seller(self):
         seller = []
+        top = 0
         for person in self.sales_people:
-            top = 0
             current = person.total_sales()
             if current > top:
                 top = current
@@ -40,7 +40,6 @@ class SalesForce:
                 seller.append(person)
         return seller
 
-
     def individual_sales(self, employee_id):
         for person in self.sales_people:
             if employee_id == SalesPerson.get_id(person):
@@ -49,10 +48,10 @@ class SalesForce:
 
     def get_sale_frequencies(self):
         frequencies = {}
+        sales = []
         for person in self.sales_people:
-            sale = SalesPerson.total_sales(person)
-            if sale in frequencies:
-                frequencies[sale] += 1
-            else:
-                frequencies[sale] = 1
+            sale = person.total_sales()
+            sales.append(sale)
+            for amount in sales:
+                frequencies[amount] = frequencies.get(amount, 0) + 1
         return frequencies
